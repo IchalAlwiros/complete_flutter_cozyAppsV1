@@ -1,5 +1,7 @@
 import 'package:bwa_cozy/theme/theme.dart';
 import 'package:bwa_cozy/ui/home_screen.dart';
+import 'package:bwa_cozy/ui/pages/bottom_test.dart';
+import 'package:bwa_cozy/widgets/bottom_item.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -60,7 +62,7 @@ class SplashScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomeScreen(),
+                            builder: (context) => BottomCustomNavbar(),
                           ),
                         );
                       },

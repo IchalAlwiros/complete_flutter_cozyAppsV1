@@ -3,6 +3,9 @@ import 'package:bwa_cozy/models/space.dart';
 import 'package:bwa_cozy/models/tips.dart';
 import 'package:bwa_cozy/provider/space_provider.dart';
 import 'package:bwa_cozy/theme/theme.dart';
+import 'package:bwa_cozy/ui/pages/bottom_test.dart';
+import 'package:bwa_cozy/widgets/bottom_item.dart';
+
 import 'package:bwa_cozy/widgets/bottom_navbar_items.dart';
 import 'package:bwa_cozy/widgets/city_card.dart';
 import 'package:bwa_cozy/widgets/space_card.dart';
@@ -18,6 +21,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // int pageIndex = 0;
+
+  // final pages = [
+  //   const Page1(),
+  //   const Page2(),
+  //   const Page3(),
+  //   const Page4(),
+  // ];
+
   @override
   Widget build(BuildContext context) {
     // var spaceProvider = Provider.of<SpaceProvider>(context);
@@ -259,39 +271,169 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           )),
-      floatingActionButton: Container(
-        height: 65,
-        width: MediaQuery.of(context).size.width - (2 * edge),
-        margin: EdgeInsets.symmetric(
-          horizontal: edge,
-        ),
-        decoration: BoxDecoration(
-          color: Color(0xffF6F7F8),
-          borderRadius: BorderRadius.circular(23),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            BottomNavBarItem(
-              'assets/images/icon_home.png',
-              true,
-            ),
-            BottomNavBarItem(
-              'assets/images/icon_message.png',
-              false,
-            ),
-            BottomNavBarItem(
-              'assets/images/Icon_card_solid.png',
-              false,
-            ),
-            BottomNavBarItem(
-              'assets/images/Icon_love_solid.png',
-              false,
-            )
-          ],
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: Container(
+      //   height: 65,
+      //   width: MediaQuery.of(context).size.width - (2 * edge),
+      //   margin: EdgeInsets.symmetric(
+      //     horizontal: edge,
+      //   ),
+      //   decoration: BoxDecoration(
+      //     color: Color(0xffF6F7F8),
+      //     // color: Colors.amber,
+      //     borderRadius: BorderRadius.circular(23),
+      //   ),
+      // child: BottomCustomNavbar(),
+      // child: Row(
+      //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //   children: [
+      //     InkWell(
+      //         onTap: () {
+      //           setState(() {
+      //             pageIndex = 0;
+      //           });
+      //         },
+      //         child: Column(
+      //           children: [
+      //             Spacer(),
+      //             Image.asset(
+      //               'assets/images/icon_home.png',
+      //               width: 26,
+      //               color: pageIndex == 0 ? purpelColor : greyColor,
+      //             ),
+      //             Spacer(),
+      //             pageIndex == 0
+      //                 ? Container(
+      //                     width: 30,
+      //                     height: 2,
+      //                     decoration: BoxDecoration(
+      //                       color: purpelColor,
+      //                       borderRadius: BorderRadius.vertical(
+      //                         top: Radius.circular(
+      //                           1000,
+      //                         ),
+      //                       ),
+      //                     ),
+      //                   )
+      //                 : Container()
+      //           ],
+      //         )),
+      //     InkWell(
+      //         onTap: () {
+      //           setState(() {
+      //             pageIndex = 1;
+      //           });
+      //         },
+      //         child: Column(
+      //           children: [
+      //             Spacer(),
+      //             Image.asset(
+      //               'assets/images/icon_message.png',
+      //               width: 26,
+      //               color: pageIndex == 1 ? purpelColor : greyColor,
+      //             ),
+      //             Spacer(),
+      //             pageIndex == 1
+      //                 ? Container(
+      //                     width: 30,
+      //                     height: 2,
+      //                     decoration: BoxDecoration(
+      //                       color: purpelColor,
+      //                       borderRadius: BorderRadius.vertical(
+      //                         top: Radius.circular(
+      //                           1000,
+      //                         ),
+      //                       ),
+      //                     ),
+      //                   )
+      //                 : Container()
+      //           ],
+      //         )),
+      //     InkWell(
+      //         onTap: () {
+      //           setState(() {
+      //             pageIndex = 2;
+      //           });
+      //         },
+      //         child: Column(
+      //           children: [
+      //             Spacer(),
+      //             Image.asset(
+      //               'assets/images/Icon_card_solid.png',
+      //               width: 26,
+      //               color: pageIndex == 2 ? purpelColor : greyColor,
+      //             ),
+      //             Spacer(),
+      //             pageIndex == 2
+      //                 ? Container(
+      //                     width: 30,
+      //                     height: 2,
+      //                     decoration: BoxDecoration(
+      //                       color: purpelColor,
+      //                       borderRadius: BorderRadius.vertical(
+      //                         top: Radius.circular(
+      //                           1000,
+      //                         ),
+      //                       ),
+      //                     ),
+      //                   )
+      //                 : Container()
+      //           ],
+      //         )),
+      //     InkWell(
+      //         onTap: () {
+      //           setState(() {
+      //             pageIndex = 3;
+      //           });
+      //         },
+      //         child: Column(
+      //           children: [
+      //             Spacer(),
+      //             Image.asset(
+      //               'assets/images/Icon_love_solid.png',
+      //               width: 26,
+      //               color: pageIndex == 3 ? purpelColor : greyColor,
+      //             ),
+      //             Spacer(),
+      //             pageIndex == 3
+      //                 ? Container(
+      //                     width: 30,
+      //                     height: 2,
+      //                     decoration: BoxDecoration(
+      //                       color: purpelColor,
+      //                       borderRadius: BorderRadius.vertical(
+      //                         top: Radius.circular(
+      //                           1000,
+      //                         ),
+      //                       ),
+      //                     ),
+      //                   )
+      //                 : Container()
+      //           ],
+      //         )),
+      //     // BottomNavBarItem(
+      //     //   'assets/images/icon_home.png',
+      //     //   // false,
+      //     //   0,
+      //     // ),
+      //     // BottomNavBarItem(
+      //     //   'assets/images/icon_message.png',
+      //     //   // false,
+      //     //   1,
+      //     // ),
+      //     // BottomNavBarItem(
+      //     //   'assets/images/Icon_card_solid.png',
+      //     //   // false,
+      //     //   2,
+      //     // ),
+      //     // BottomNavBarItem(
+      //     //   'assets/images/Icon_love_solid.png',
+      //     //   // false,
+      //     //   3,
+      //     // )
+      //   ],
+      // ),
+      //   ),
+      //   floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
