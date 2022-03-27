@@ -15,9 +15,20 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => SpaceProvider(),
       child: MaterialApp(
+        // builder: ((context, child) {
+        //   return ScrollConfiguration(behavior: MyBehavior(), child: child)
+        // }),
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
       ),
     );
   }
 }
+
+// class MyBehavior extends ScrollBehavior {
+//   @override
+//   Widget buildOverscrollIndicator(
+//       BuildContext context, Widget child, ScrollableDetails details) {
+//     return child;
+//   }
+// }

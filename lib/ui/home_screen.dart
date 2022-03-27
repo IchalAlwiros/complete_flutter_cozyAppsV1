@@ -4,7 +4,7 @@ import 'package:bwa_cozy/models/tips.dart';
 import 'package:bwa_cozy/provider/space_provider.dart';
 import 'package:bwa_cozy/theme/theme.dart';
 import 'package:bwa_cozy/ui/pages/bottom_test.dart';
-import 'package:bwa_cozy/widgets/bottom_item.dart';
+import 'package:bwa_cozy/widgets/bottom_custom.dart';
 
 import 'package:bwa_cozy/widgets/bottom_navbar_items.dart';
 import 'package:bwa_cozy/widgets/city_card.dart';
@@ -110,6 +110,33 @@ class _HomeScreenState extends State<HomeScreen> {
                       id: 1,
                       name: 'Jakarta',
                       imageUrl: 'assets/images/city3.png',
+                      isPopular: false,
+                    )),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    CityCard(City(
+                      id: 1,
+                      name: 'Jakarta',
+                      imageUrl: 'assets/images/city4.png',
+                      isPopular: false,
+                    )),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    CityCard(City(
+                      id: 1,
+                      name: 'Jakarta',
+                      imageUrl: 'assets/images/city5.png',
+                      isPopular: false,
+                    )),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    CityCard(City(
+                      id: 1,
+                      name: 'Jakarta',
+                      imageUrl: 'assets/images/city6.png',
                       isPopular: false,
                     )),
                     const SizedBox(
